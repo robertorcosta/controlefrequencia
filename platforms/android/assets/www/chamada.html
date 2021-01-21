@@ -1,0 +1,40 @@
+<div class="valign-wrapper 00695c teal darken-3 white-text">
+	<h3 class="titulo">Realizar Chamada</h3>
+</div>
+<div class="">
+	{{data}}
+</div>
+<div class="">
+	<select class="" name="" style="display: inline" ng-model="horario" ng-change="changeHorario()">
+		<option value="">Selecione o horário</option>
+		<option value="1">1º horário</option>
+		<option value="2">2º horário</option>
+		<option value="3">3º horário</option>
+		<option value="4">4º horário</option>
+		<option value="5">1º e 2º horário</option>
+		<option value="6">3º e 4º horário</option>
+	</select>
+</div>
+<div class="container">
+	<div class="text-center">
+		<p><b>Selecione os alunos presentes:</b></p>
+		<table class="striped bordered">
+			<thead>
+				<tr>
+					<th class="text-center">Alunos</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="aluno in turma.turma track by $index">
+					<td>
+						<input type="checkbox" ng-model="aluno.check" class="filled-in" id="filled-in-box{{$index}}" />
+						<label for="filled-in-box{{$index}}">{{aluno.Nome}}</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<br>
+<center> <a ng-click="salvar()" class="waves-effect waves-light btn-large z-depth-4 card-panel blue accent-3">Salvar</a><br><br>
